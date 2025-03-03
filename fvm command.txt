@@ -1,0 +1,41 @@
+Usage: fvm <command> [arguments]
+
+** fvm use korar somoy flutter sdk path F:\Arkhas\.fvm\flutter_sdk  eirokom hbe
+
+Global options:
+-h, --help       Print this usage information.
+    --verbose    Print verbose output.
+-v, --version    Print the current version.
+
+Available commands:
+  api        JSON API for FVM data
+  config     Set global configuration settings for FVM
+  dart       Proxies Dart Commands
+  destroy    Destroy FVM cache by deleting FVM directory
+  doctor     Shows information about environment, and project configuratio
+n.
+  exec       Executes scripts with the configured Flutter SDK
+  flutter    Proxies Flutter Commands
+  global     Sets Flutter SDK Version as a global
+  list       Lists installed Flutter SDK Versions
+  releases   View all Flutter SDK releases available for install.
+  remove     Removes Flutter SDK Version
+  spawn      Spawns a command on a Flutter version
+  use        Sets Flutter SDK Version you would like to use in a project 
+
+C:\Users\IDRIS\AppData\Local\Pub\Ca
+che\bin 
+
+flutter sdk location : C:\Users\IDRIS\fvm\versions\3.24.0
+
+Here are some common commands for Flutter Version Management (FVM):
+fvm list: Lists all Flutter SDK versions installed on your machine 
+fvm install <version>: Installs a specific Flutter SDK version 
+fvm use <version>: Sets the Flutter SDK version to use for the current project 
+fvm remove <version>: Removes a specific Flutter SDK version from your machine 
+fvm global <version>: Sets the global Flutter version 
+fvm doctor: Displays the current FVM version and its configuration 
+fvm flutter <command>: Runs any Flutter command using the Flutter SDK version configured for the current project 
+flutter channel: Lists the available channels 
+flutter channel <channel_name>: Switches to any of the listed channels 
+flutter --version: Checks the version in that particular channel 
