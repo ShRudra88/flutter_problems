@@ -23,8 +23,7 @@ n.
   spawn      Spawns a command on a Flutter version
   use        Sets Flutter SDK Version you would like to use in a project 
 
-C:\Users\IDRIS\AppData\Local\Pub\Ca
-che\bin 
+C:\Users\IDRIS\AppData\Local\Pub\Cache\bin 
 
 flutter sdk location : C:\Users\IDRIS\fvm\versions\3.24.0
 

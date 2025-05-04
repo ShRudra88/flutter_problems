@@ -1,0 +1,12 @@
+There are three primary ways to check your Flutter version:
+
+1. Using the Command Line (Simplest and most direct approach)
+
+2. Employing flutter doctor (Provides a comprehensive health report)
+
+3. Inspecting the pubspec.lock File (For specific project version)
+3. Checking Project Version (Using pubspec.lock File)
+If you’re working with a cloned Flutter project, you can determine the version it was created with. This can help understand the project’s requirements and potential compatibility issues. Here’s how to find it.
+Locate the pubspec.lock File: This file resides in the project’s root directory.
+Open the File: Use a text editor to open the pubspec.lock file.
+Find the Flutter Version: Search for lines containing “flutter”. You’ll find a line specifying the exact Flutter version used during development.

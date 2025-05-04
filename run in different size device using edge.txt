@@ -1,0 +1,11 @@
+Simulate Mobile & Tablet View in Edge
+Once the app is running in Edge, follow these steps:
+
+Open DevTools: Press F12 or Ctrl + Shift + I to open Developer Tools.
+Toggle Device Toolbar: Click the mobile/tablet icon in the top-left corner of DevTools.
+Select a Device: Click the dropdown to choose a device like:
+iPhone 14 Pro
+Pixel 7
+iPad Pro
+Galaxy Fold, etc.
+Set Screen Size: Manually adjust width & height if needed.
