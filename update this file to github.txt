@@ -3,4 +3,4 @@ then write in terminal
 
 git add .
 git commit -m "Your update message"
-git push origin main
+git push origin master (branch name)
