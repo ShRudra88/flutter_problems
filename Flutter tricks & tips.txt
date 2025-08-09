@@ -1,0 +1,5 @@
+**how to create a full project
+
+1. plan 
+2. design
+3. fix the themedata

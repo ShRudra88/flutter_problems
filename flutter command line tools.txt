@@ -1,0 +1,144 @@
+**Flutter CLI Commands and Their Uses**
+
+
+### 1. `flutter doctor`
+
+Checks your environment and shows missing dependencies.
+
+flutter doctor
+
+### 2. `flutter create`
+
+Creates a new Flutter project.
+
+flutter create my_app
+flutter create --org com.example --platforms=android,ios my_app
+
+
+### 3. `flutter run`
+
+Runs your Flutter app on a connected device/emulator.
+
+flutter run
+flutter run -d chrome
+flutter run --release
+
+### 4. `flutter build`
+
+Builds your Flutter app for deployment.
+
+flutter build apk           # Android APK
+flutter build appbundle     # Android App Bundle
+flutter build ios           # iOS App
+flutter build web           # Web App
+flutter build windows       # Windows Desktop App
+flutter build macos         # macOS Desktop App
+flutter build linux         # Linux Desktop App
+
+### 5. `flutter pub get`
+
+Fetches the dependencies listed in `pubspec.yaml`.
+
+flutter pub get
+
+
+### 6. `flutter pub upgrade`
+
+Upgrades all the dependencies to the latest compatible versions.
+
+flutter pub upgrade
+
+
+### 7. `flutter pub outdated`
+
+Displays outdated packages.
+
+flutter pub outdated
+
+### 8. `flutter clean`
+
+Deletes the `build/`, `.dart_tool/`, and `pubspec.lock` directories.
+
+flutter clean
+
+### 9. `flutter analyze`
+
+Analyzes the project for any issues in the code.
+
+flutter analyze
+
+### 10. `flutter test`
+
+Runs unit/widget/integration tests.
+
+flutter test
+
+### 11. `flutter upgrade`
+
+Upgrades Flutter to the latest version.
+
+flutter upgrade
+
+### 12. `flutter downgrade`
+
+Downgrades Flutter to the previous version.
+
+flutter downgrade
+
+### 13. `flutter config`
+
+Configure Flutter settings such as enabling desktop or web support.
+
+flutter config --enable-web
+flutter config --enable-linux-desktop
+
+### 14. `flutter devices`
+
+Lists all connected devices and emulators.
+
+flutter devices
+
+### 15. `flutter version`
+
+Displays the Flutter SDK version.
+
+flutter --version
+
+### 16. `flutter channel`
+
+Switches Flutter release channels.
+
+flutter channel stable
+flutter channel beta
+flutter channel dev
+flutter channel master
+
+### 17. `flutter precache`
+
+Downloads the necessary binaries ahead of time.
+
+flutter precache
+
+### 18. `flutter logs`
+
+Shows log output from a running Flutter app.
+
+flutter logs
+
+
+### 19. `flutter attach`
+
+Attaches to a running app instance.
+
+flutter attach
+
+### 20. how to create a module 
+1. create directory
+--> mkdir core(directory name)
+2. --> cd core
+3. -->flutter create --template=package enter_name_here
+
+/ -->flutter create --template=package core/data
+
+
+**Note**: Use `flutter help` to see all available commands.

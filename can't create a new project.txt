@@ -1,0 +1,39 @@
+🛠️ Fix: Can’t Create New Flutter Project in Android Studio
+1. Close Existing Project
+Go to: File > Close Project
+
+Return to Android Studio Welcome screen.
+
+2. Create New Flutter Project
+Click "New Flutter Project"
+
+Select Flutter Application
+
+Set project name, path, and Flutter SDK
+
+Click Finish
+Wait for Gradle to build.
+
+3. If Android Studio Looks Empty
+Go to: View > Tool Windows > Project
+(Shortcut: Alt+1 or Cmd+1)
+
+4. Check SDK Paths
+Flutter SDK: File > Settings > Languages & Frameworks > Flutter
+
+Dart SDK: File > Settings > Languages & Frameworks > Dart
+
+5. Optional: Use Terminal to Create
+bash
+flutter create my_app
+cd my_app
+flutter run
+Then open in Android Studio via File > Open
+
+6. Fix Build Issues (If Any)
+bash
+# Inside your project folder:
+rm -rf .idea .dart_tool
+rm pubspec.lock
+flutter clean
+flutter pub get
