@@ -1,0 +1,6 @@
+cmd in this directory 
+then write in terminal
+
+git add .
+git commit -m "Your update message"
+git push origin main
