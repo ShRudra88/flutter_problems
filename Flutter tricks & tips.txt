@@ -1,5 +1,53 @@
-**how to create a full project
+1. color & decoration pasapasi bosena, decoration er moddhe color bose
+     Container(
+      // ekahne color hobe na jodi decoration thake
+      decoration: BoxDecoration(
+        color: Colors.lightBlueAccent,
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+        gradient: LinearGradient(
+          colors: [Colors.blue, Colors.purple],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: Text('Decorated Container'),
+    );
 
-1. plan 
-2. design
-3. fix the themedata
+2. bloc code read -> code flow
+entity->model->datasource-> rpository (domain) -> repository (data) -> uecase
+
+3. dependency vs dev_dependency
+The fundamental distinction lies in whether the package is required for the application to function correctly in production. If it is, it's a dependency.
+If it's only needed for development, testing, or build processes, it's a dev_dependency.
+
+4.  String _truncateId(String id) {
+    if (id.length <= 10) {
+      return id;
+    }
+    return '${id.substring(0, 8)}...';
+  }
+
+5. Navigate Back to Previous Cursor Position:
+Windows/Linux: Press Ctrl + Alt + Left Arrow
+
+6.Most easy way to add firebase in flutter app
+Step 1: Install Firebase CLI (Optional if using FlutterFire CLI only)
+Step 2: Install FlutterFire CLI
+Step 3: Create a Firebase Project
+Step 4: Add Your App to Firebase
+Step 5: Configure Firebase Automatically with CLI
+Step 6: Add Firebase Dependencies
+Step 7: Initialize Firebase in main.dart
+Step 8: Run the App 
+If it runs successfully → you have Firebase connected
+Firebase makes Flutter app development easier by providing ready backend services like authentication, database, and cloud storage — 
+so you don’t need to build your own server.
+It helps you develop, deploy, and scale apps faster with real-time data and seamless cross-platform integration.
