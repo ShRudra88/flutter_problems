@@ -1,0 +1,8 @@
+https://stackoverflow.com/questions/65630743/how-to-solve-flutter-web-api-cors-error-only-with-dart-code
+
+It seems like CORS error is well-known issue in the web field. But I tried flutter web for the first time ever and I faced critical error.
+
+
+just run this command in command line 
+
+flutter run -d chrome --web-browser-flag "--disable-web-security"

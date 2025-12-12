@@ -61,9 +61,6 @@ Ask questions early to avoid confusion later.
 
 
 
-
-
-
 ============================================
         GIT & GITHUB COMMANDS GUIDE
 ============================================
@@ -183,7 +180,81 @@ git reset --hard <commit_hash>
 
 git revert <commit_hash>
     - Creates a new commit that undoes the changes made in a previous commit.
+✅ If you want to go back to the last commit and discard ALL local changes
 
+(This will remove all uncommitted changes)
+
+Option 1 — Using Git Command
+
+Open terminal in your project:
+
+git reset --hard HEAD
+
+
+This will restore your project exactly to your last commit.
+
+Option 2 — Using Android Studio
+
+Go to Git menu
+
+Click "Rollback" or
+Git → Manage Branches → Show Local Changes
+
+Right-click changed files → Revert
+
+Or press:
+
+Ctrl + Alt + Z 
+
+
+to rollback each file.
+
+❗ If you want to revert to a specific older commit (not the last one)
+Step 1: See your commit history
+git log --oneline
+
+Step 2: Reset to that commit
+git reset --hard <commit_id>
+
+
+Example:
+
+git reset --hard a13f6b2
+
+❗ If you already pushed and want to reset remote also
+
+⚠️ This will overwrite remote history.
+
+git push origin HEAD --force
+
+🔥 If you want to save your changes first (just in case)
+
+Before resetting, stash your uncommitted work:
+
+git stash
+
+
+Then reset:
+
+git reset --hard HEAD
+
+
+If you want changes again later:
+
+git stash pop
+
+📌 Most common use case for your situation
+
+Since you said:
+
+committed and pushed already, now edited many things, want to go back to committed files
+
+✔️ Best simple solution:
+
+git reset --hard HEAD
+
+
+This brings your project back exactly to the last pushed commit.
 --------------------------------------------
 9️⃣ VIEWING HISTORY & LOGS
 --------------------------------------------
