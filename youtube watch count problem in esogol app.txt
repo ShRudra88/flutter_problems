@@ -1,0 +1,93 @@
+Why it's happening:
+YouTube's view counting algorithm requires:
+
+Actual user interaction (clicks, engagement)
+Proper referrer headers
+No automated playback
+The YouTube player to be on youtube.com domain
+
+Solution : 
+Open in YouTube App/Browser (Recommended)
+Instead of using youtube_player_flutter, open the video in the YouTube app or browser where views will count properly.
+
+// Add this method to open YouTube video externally
+import 'package:url_launcher/url_launcher.dart';
+
+Future<void> _openInYouTube() async {
+  final String videoUrl = widget.videoData.videoLink;
+  final Uri uri = Uri.parse(videoUrl);
+  
+  try {
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication, // Opens in YouTube app/browser
+      );
+      _startExternalWatchTimer(); // Still track time in your app
+    } else {
+      throw 'Could not launch $videoUrl';
+    }
+  } catch (e) {
+    Fluttertoast.showToast(
+      msg: "Cannot open YouTube",
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+    );
+  }
+}
+
+// Track watch time when opened externally
+void _startExternalWatchTimer() {
+  _watchTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    if (mounted) {
+      setState(() {
+        _watchTime++;
+      });
+      
+      if (_watchTime >= requiredWatchSeconds && !_canClaim) {
+        setState(() {
+          _canClaim = true;
+        });
+        timer.cancel();
+        _watchTimer = null;
+        
+        // Show message to return to app
+        Fluttertoast.showToast(
+          msg: "✓ You've watched enough! Return to app to claim reward.",
+          backgroundColor: Colors.green, 
+          textColor: Colors.white,
+          gravity: ToastGravity.TOP,
+          toastLength: Toast.LENGTH_LONG,
+        );
+      }
+    }
+  });
+}
+Then modify your build method to show an "Open in YouTube" button:
+
+// Replace the YoutubePlayer widget with:
+Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      // Thumbnail preview
+      Image.network(
+        'https://img.youtube.com/vi/$_videoId/0.jpg',
+        width: double.infinity,
+        height: 200.h,
+        fit: BoxFit.cover,
+      ),
+      SizedBox(height: 20.h),
+      ElevatedButton.icon(
+        onPressed: _openInYouTube,
+        icon: Icon(Icons.play_circle_outline),
+        label: Text("Watch on YouTube"),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.red,
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+        ),
+      ),
+      // Your watch timer UI remains the same...
+    ],
+  ),
+)

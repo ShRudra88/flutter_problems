@@ -1,0 +1,19 @@
+To help troubleshoot why your emulators aren't showing up in the Device Manager, please try the following steps:
+1.
+Check ADB Connection: Sometimes the ADB (Android Debug Bridge) server gets stuck. You can try restarting it from your terminal:
+Shell Script
+adb kill-server
+adb start-server
+2.
+Verify SDK Path: Ensure that the Android SDK path is correctly configured in Android Studio. Go to File > Settings (or Android Studio > Settings on macOS) > Languages & Frameworks > Android SDK and verify the "Android SDK Location".
+3.
+Check for Running Processes: If an emulator was closed improperly, a "lock" file might still exist.
+◦
+Navigate to your AVD directory (usually C:\Users\<YourUser>\.android\avd\<EmulatorName>.avd).
+◦
+Delete any files ending in .lock.
+4.
+Flutter Specific: Since you are working on a Flutter project, run flutter doctor in the terminal to see if there are any issues detected with the Android toolchain or connected devices.
+If flutter doctor shows that the Android license is not accepted, run:
+flutter doctor --android-licenses
+Would you like me to check your local.properties or any other configuration file to see if the SDK paths are set correctly?
